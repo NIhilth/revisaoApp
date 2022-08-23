@@ -1,10 +1,10 @@
 const crud = require("./crud")
 
 async function executar() {
-    // const dado = {nome: "Gustavo Zap", idade: 17};
-    // await crud.save("usuario", "bhaI0JbVjlR3KiaKbtA2", dado)
+    const dado = {nome: "Kenzo"};
+    const resultado = await crud.save("Autores", undefined, dado)
 
-    const resultado = await crud.getWithFilter("usuario", "idade", "!=", 23)
+    // const resultado = await crud.getWithFilter("usuario", "idade", "!=", 23)
 
     console.log(resultado)
     // console.log("existe",resultado.map(e => {
@@ -16,4 +16,20 @@ async function executar() {
     // }));
 }
 
-executar().catch(e => console.log("Aconteceu um erro", e))
+// executar().catch(e => console.log("Aconteceu um erro", e))
+
+
+const livroHandler = require("./api/livro/livro.handler")
+
+
+async function execute(){
+    const livro = {
+        titulo: "Harry Potter",
+        quantidadePaginas: 8,
+        listaAutores: ["10"]
+    }
+    const resultado = await livroHandler.cadastrarLivro(livro)
+    console.log(resultado);
+}
+
+execute()

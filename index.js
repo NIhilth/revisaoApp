@@ -1,13 +1,16 @@
 const express = require("express");
-const app = express()
-const route = express.Router()
+const app = express();
+const route = express.Router();
+const routes = require("./api/routes");
 
 route.get("/", (req,res) => {
-    res.send("Hello world")
-})
+    res.send("Hello world");
+});
+
+route.use("/api",routes);
+
+app.use(route);
 
 app.listen("3000", () => {
-    console.log("http://localhost:3000")
-})
-
-app.use(route)
+    console.log("http://localhost:3000");
+});
