@@ -26,7 +26,7 @@ async function execute(){
     const livro = {
         titulo: "Harry Potter",
         quantidadePaginas: 8,
-        listaAutores: ["10"]
+        listaAutores: ["8UmjucbJ6LqPwkXUYFdE","JPWfhgHMwuFwhFYpXKbr"]
     }
     const resultado = await livroHandler.cadastrarLivro(livro)
     console.log(resultado);
